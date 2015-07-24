@@ -7,6 +7,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Past;
+
+import org.hibernate.validator.constraints.Email;
 
 
 @Entity
@@ -22,7 +27,11 @@ public class Employee {
 	private String org_id;
 	private String level_id;
 	private String dept_id;
+	@Temporal(TemporalType.DATE)
+	@Past
 	private Date dob;
+	@Temporal(TemporalType.DATE)
+	@Past
 	private Date doj;
 	private String address1;
 	private String address2;
@@ -30,6 +39,7 @@ public class Employee {
 	private String state;
 	private String nationality;
 	private int contact;
+	@Email
 	private String email;
 	
 	
