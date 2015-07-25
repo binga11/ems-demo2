@@ -3,6 +3,8 @@ package org.project1.model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -13,22 +15,21 @@ import javax.persistence.TemporalType;
 @Table(name="LEAVE_REQUEST")
 public class LeaveRequest {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String req_id;
 	private String emp_id;
 	private String emp_name;
-	@Temporal(TemporalType.DATE)
 	private Date today_date;
 	private String level_id;
-	@Temporal(TemporalType.DATE)
 	private Date from_date;
-	@Temporal(TemporalType.DATE)
-	private String to_date;
+	private Date to_date;
 	private int days;
 	private String reason;
 	private String leave_type;
 	private String leave_status;
+	private String pending_status;
 	
-	public String getReq_id() {
+		public String getReq_id() {
 		return req_id;
 	}
 	public void setReq_id(String req_id) {
@@ -64,10 +65,10 @@ public class LeaveRequest {
 	public void setFrom_date(Date from_date) {
 		this.from_date = from_date;
 	}
-	public String getTo_date() {
+	public Date getTo_date() {
 		return to_date;
 	}
-	public void setTo_date(String to_date) {
+	public void setTo_date(Date to_date) {
 		this.to_date = to_date;
 	}
 	public int getDays() {
@@ -94,5 +95,12 @@ public class LeaveRequest {
 	public void setLeave_status(String leave_status) {
 		this.leave_status = leave_status;
 	}
+	public String getPending_status() {
+		return pending_status;
+	}
+	public void setPending_status(String pending_status) {
+		this.pending_status = pending_status;
+	}
+
 	
 }
