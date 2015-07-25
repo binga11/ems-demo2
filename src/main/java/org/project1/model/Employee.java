@@ -7,6 +7,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Past;
+
+import org.hibernate.validator.constraints.Email;
 
 
 @Entity
@@ -15,28 +20,29 @@ public class Employee {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String emp_id;
+    private int emp_id;
 	private String emp_f_name;
 	private String emp_m_name;
 	private String emp_l_name;
-	private String org_id;
+	private String org_id;	
 	private String level_id;
 	private String dept_id;
 	private Date dob;
-	private Date doj;
+//	private Date doj;
 	private String address1;
 	private String address2;
 	private String city;
 	private String state;
+	
 	private String nationality;
 	private int contact;
 	private String email;
+
 	
-	
-	public String getEmp_id() {
+	public int getEmp_id() {
 		return emp_id;
 	}
-	public void setEmp_id(String emp_id) {
+	public void setEmp_id(int emp_id) {
 		this.emp_id = emp_id;
 	}
 	public String getEmp_f_name() {
@@ -81,12 +87,13 @@ public class Employee {
 	public void setDob(Date dob) {
 		this.dob = dob;
 	}
-	public Date getDoj() {
-		return doj;
-	}
-	public void setDoj(Date doj) {
-		this.doj = doj;
-	}
+//	public Date getDoj() {
+//		return doj;
+//	}
+//	public void setDoj(Date doj) {
+//		this.doj = doj;
+//	}
+	
 	public String getAddress1() {
 		return address1;
 	}
@@ -129,5 +136,16 @@ public class Employee {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	@Override
 
+	public String toString() {
+		return "Employee [emp_id=" + emp_id + ", emp_f_name=" + emp_f_name
+				+ ", emp_m_name=" + emp_m_name + ", emp_l_name=" + emp_l_name
+				+ ", org_id=" + org_id + ", level_id=" + level_id
+				+ ", dept_id=" + dept_id + ", dob=" + dob + ", address1="
+				+ address1 + ", address2=" + address2 + ", city=" + city
+				+ ", state=" + state + ", nationality=" + nationality
+				+ ", contact=" + contact + ", email=" + email + "]";
+	}
+		
 }

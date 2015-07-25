@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -20,15 +19,9 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-    <!-- Custom CSS -->
-    <link href="../../css/simple-sidebar.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="resources/css/simple-sidebar.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -55,7 +48,7 @@
                     <a href="empList.html">Employee List</a>
                 </li>
                 <li>
-                    <a href="leave.html">Review Leaves</a>
+                    <a href="leave_request.jsp">Review Leaves</a>
                 </li>
                 <li>
                     <a href="payroll.html">Payroll</a>
@@ -79,21 +72,22 @@
     <br>
   </div>
   <hr>
-  <form class="form-horizontal" role="form">
+  <form class="form-horizontal" role="form" action="add" method="post">
     <div class="row">
-      <div class="col-sm-6 col-lg-4">
+      <!-- <div class="col-sm-6 col-lg-4">
         <div class="form-group">
           <label for="inputEmail" class="col-md-4 control-label">Employee ID:</label>
           <div class="col-md-8">
-            <input type="email" class="form-control" id="inputEmail" placeholder="nai dalna">
+            <input type="email" class="form-control" name="emp_id" id="inputEmail" placeholder="nai dalna">
           </div>
         </div>
-      </div>
+      </div> -->
+     
       <div class="col-sm-6 col-lg-4">
         <div class="form-group">
           <label for="inputPassword" class="col-md-4 control-label">Fisrt Name:</label>
           <div class="col-md-8">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Fisrt Name">
+            <input type="password" class="form-control" name="emp_f_name" id="inputPassword" placeholder="Fisrt Name">
           </div>
         </div>
       </div>
@@ -101,7 +95,7 @@
         <div class="form-group">
           <label for="inputLabel3" class="col-md-4 control-label">Middle Name:</label>
           <div class="col-md-8">
-            <input type="text" class="form-control" id="inputLabel3" placeholder="Middle Name">
+            <input type="text" class="form-control" name="emp_m_name" id="inputLabel3" placeholder="Middle Name">
           </div>
         </div>
       </div>
@@ -109,7 +103,7 @@
         <div class="form-group">
           <label for="inputLabel4" class="col-md-4 control-label">Last Name:</label>
           <div class="col-md-8">
-            <input type="text" class="form-control" id="inputLabel4" placeholder="Last Name">
+            <input type="text" class="form-control" name="emp_l_name" id="inputLabel4" placeholder="Last Name">
           </div>
         </div>
       </div>
@@ -117,7 +111,7 @@
         <div class="form-group">
           <label for="input5" class="col-md-4 control-label">Organization ID:</label>
           <div class="col-md-8">
-            <input type="text" class="form-control" id="input5" placeholder="Organization ID">
+            <input type="text" class="form-control" name="org_id" id="input5" placeholder="Organization ID">
           </div>
         </div>
       </div>
@@ -125,7 +119,7 @@
         <div class="form-group">
           <label for="input6" class="col-md-4 control-label">Level ID:</label>
           <div class="col-md-8">
-            <input type="text" class="form-control" id="input6" placeholder="Level ID">
+            <input type="text" class="form-control" name="level_id" id="input6" placeholder="Level ID">
           </div>
         </div>
       </div>
@@ -133,35 +127,38 @@
         <div class="form-group">
           <label for="input7" class="col-md-4 control-label">Department ID:</label>
           <div class="col-md-8">
-            <input type="text" class="form-control" id="input7" placeholder="Department ID">
+            <input type="text" class="form-control" name="dept_id" id="input7" placeholder="Department ID">
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-lg-4">
+    <!-- <!--   <div class="col-sm-6 col-lg-4">
         <div class="form-group">
           <label for="input8" class="col-md-4 control-label">DOB:</label>
           <div class="col-md-8">
-            <input type="text" class="form-control" id="input8" placeholder="dd/mm/yy">
+            <input type="text" class="form-control" name="dob" id="input8" placeholder="dd/mm/yy">
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-lg-4">
+ -->      <div class="col-sm-6 col-lg-4">
         <div class="form-group">
           <label for="input9" class="col-md-4 control-label">DOJ:</label>
           <div class="col-md-8">
-            <input type="text" class="form-control" id="input9" placeholder="dd/mm/yy">
+            <input type="text" class="form-control" name="doj" id="input9" placeholder="dd/mm/yy">
           </div>
         </div>
-      </div>
+      </div> -->
       
-  </form>
+     </div>
+  
   <p>Note:
   </p>
   <hr>
   <div class="span7 text-center">
   <input class="btn btn-default" type="submit" value="Submit">
 </div>
+</form>
 </div><!-- /.container -->
+
 
         </div>
         <!-- /#page-content-wrapper -->
@@ -170,7 +167,7 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../../js/jquery.js"></script>
+    <script src="resources/js/jquery.js"></script>
 
    
 

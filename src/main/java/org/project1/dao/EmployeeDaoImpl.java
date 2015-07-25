@@ -1,7 +1,11 @@
 package org.project1.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -20,13 +24,32 @@ public  class EmployeeDaoImpl implements EmployeeDao {
 		this.entityManager = entityManager;
 	}
 
+//	
+//	@Autowired
+//    private SessionFactory sessionFactory;
 
 	@Override
 	public void addEmployee(Employee e) {
 		System.out.println("INSIDE DAOIMPL");
 		System.out.println(e);
 		entityManager.merge(e);
+		
+		
 	}
+
+@Override
+public List<Employee> getEmpList() {
+	
+	//return (List<Employee>)entityManager.createQuery("from Employee").getResultList();
+	
+	Query q = entityManager.createQuery("from Employee", Employee.class);
+	List<Employee> resultList = (List<Employee>)q.getResultList();
+	System.out.println("inside dao"+resultList);
+	return resultList;
+}
+
+
+
 
 	
 	
